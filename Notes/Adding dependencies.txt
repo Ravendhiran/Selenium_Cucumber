@@ -1,0 +1,21 @@
+feature = "Add the path of feature file"  ex: "src/test/java/Feature"
+glue = "Add step definition package name only" ex: "Steps"
+publish = true  \\ To get the default cucumber report which will be stored in Cloud
+
+
+Dependencies in pom.xml:
+
+selenium-Java
+selenium-server
+slf4j-simple
+jxl
+assertj-core
+hamcrest-all
+jsch (jcraft)
+apache.poi
+testng
+
+cucumber-junit
+cucumber-testng
+cucumber-java
+cucumber-jvm
