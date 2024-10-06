@@ -8,22 +8,19 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 					//features= {".//Features/"},
-					//features= {".//Features/Login.feature"},
-					//features= {".//Features/Registration.feature"},
-		
+					features= {".//Features/Login.feature",".//Features/Registration.feature"},
 					//features= {".//Features/LoginDDTExcel.feature"},
-					features= {".//Features"},
 					//features= {"@target/rerun.txt"},
-					glue={"stepDefinitions","hooks"},
+					glue={"stepDefinitions", "hooks"},
 					plugin= {
-								"pretty", "html:reports/myreport.html",   
+							"pretty", "html:reports/myreport.html",   
 								"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 								"rerun:target/rerun.txt",
-							
+								//"com.cucumber.listener.ExtentCucumberFormatter:reports/CucumberExtentReport.html",
 							},
-					tags = "@smoke",
+					tags = ("@sanity or @regression"),
 							
-					dryRun=true,    // checks mapping between scenario steps and step definition methods
+					dryRun=false,    // checks mapping between scenario steps and step definition methods
 					monochrome=true,    // to avoid junk characters in output
 					publish=true   // to publish report in cucumber server
 					//tags="@sanity"  // this will execute scenarios tagged with @sanity
